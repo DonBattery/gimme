@@ -30,7 +30,7 @@ jobs:
       uses: actions/setup-go@v2.1.0
       with:
         # The Go version to download (if necessary) and use. Supports semver spec and ranges.
-        go-version: $GO_VERSION
+        go-version: ${{ env.GO_VERSION }}
 
     - name: Build App
       run: go build .
@@ -50,7 +50,7 @@ jobs:
       uses: actions/setup-go@v2.1.0
       with:
         # The Go version to download (if necessary) and use. Supports semver spec and ranges.
-        go-version: $GO_VERSION
+        go-version: ${{ env.GO_VERSION }}
 
     - name: Build App
       run: go test ./...
