@@ -35,7 +35,7 @@ jobs:
     #   run: sudo apt-get install python3-setuptools
 
     - name: Install YAML Linter
-      run: apt-get install yamllint
+      run: sudo apt-get install yamllint
 
     - name: Run YAML Linter
       run:  yamllint -c .yamllint.yaml .

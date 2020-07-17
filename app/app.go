@@ -85,7 +85,9 @@ func (app *App) setup(cmd *cobra.Command, args []string) error {
 	app.log = colorlog.NewColorLogger("Cmd", app.debug)
 	app.log.Debug("Logger has been set up")
 
-	viper.BindEnv("root_dir", "GIMME_ROOT_DIR")
+	if err := viper.BindEnv("root_dir", "GIMME_ROOT_DIR"); err != nil {
+		return errors.Wrap(err, "Failed to bind GIMME_ROOT_DIR env var")
+	}
 	app.log.Debugf("GIMME_ROOT_DIR: %s", viper.GetString("root_dir"))
 
 	// If a ConfigFile is set read it in
@@ -139,13 +141,13 @@ func (app *App) cleanup(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
-func (app *App) setVal(key string, value interface{}) {
+func (app *App) setVal(key interface{}, value interface{}) {
 	app.ctx = context.WithValue(app.ctx, key, value)
 }
 
-func (app *App) getVal(key string) interface{} {
-	return app.ctx.Value(key)
-}
+// func (app *App) getVal(key string) interface{} {
+// 	return app.ctx.Value(key)
+// }
 
 func (app *App) getConf() *model.Configs {
 	if val, ok := app.ctx.Value(confKey).(*model.Configs); ok {
