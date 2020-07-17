@@ -38,7 +38,7 @@ jobs:
       run: pip3 install --user yamllint
 
     - name: Run YAML Linter
-      run: pip3 install --user yamllint
+      run:  yamllint -c .yamllint.yaml .
 
   golangci-lint:
     name: GolangCI Lint
