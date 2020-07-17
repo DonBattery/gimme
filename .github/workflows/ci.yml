@@ -38,14 +38,14 @@ jobs:
       run: sudo apt-get install yamllint
 
     - name: Run YAML Linter
-      run: yamllint -c .yamllint.yaml .
+      run: yamllint -c .github/yamllint.yaml .
 
   golangci-lint:
     name: GolangCI Lint
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: golangci-lint
+    - name: run golangci-lint
       uses: golangci/golangci-lint-action@v1
       with:
         # Required: the version of golangci-lint is required and must be specified without patch version:
