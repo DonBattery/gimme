@@ -1,0 +1,83 @@
+---
+
+yaml-files:
+  - '*.yaml'
+  - '*.yml'
+  - '.yamllint'
+
+rules:
+  braces:
+    min-spaces-inside: 0
+    max-spaces-inside: 1
+    min-spaces-inside-empty: 0
+    max-spaces-inside-empty: 1
+
+  brackets:
+    min-spaces-inside: 0
+    max-spaces-inside: 1
+    min-spaces-inside-empty: 0
+    max-spaces-inside-empty: 1
+
+  colons:
+    max-spaces-before: 1
+    max-spaces-after: 1
+    # min-spaces-inside: 0
+    # max-spaces-inside: 1
+    # min-spaces-inside-empty: 0
+    # max-spaces-inside-empty: 1
+
+  commas:
+    max-spaces-before: 1
+    max-spaces-after: 1
+    min-spaces-after: 1
+
+  comments:
+    require-starting-space: false
+    min-spaces-from-content: 0
+    level: warning
+
+  comments-indentation:
+    level: warning
+
+  document-end:
+    present: true
+
+  document-start:
+    present: true
+    level: warning
+
+  empty-lines:
+    max: 1
+    max-start: 1
+    max-end: 1
+
+  empty-values: disable
+
+  hyphens:
+    max-spaces-after: 1
+
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+    check-multi-line-strings: false
+
+  key-duplicates: enable
+
+  key-ordering: disable
+
+  line-length:
+    max: 120
+    allow-non-breakable-words: true
+    allow-non-breakable-inline-mappings: true
+    level: warning
+
+  new-line-at-end-of-file: enable
+
+  new-lines:
+    type: unix
+
+  trailing-spaces: enable
+  truthy:
+    level: warning
+
+...
