@@ -38,7 +38,7 @@ jobs:
       run: sudo apt-get install yamllint
 
     - name: Run YAML Linter
-      run:  yamllint -c .yamllint.yaml .
+      run: yamllint -c .yamllint.yaml .
 
   golangci-lint:
     name: GolangCI Lint
